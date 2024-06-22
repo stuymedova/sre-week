@@ -1,0 +1,46 @@
+version: 1
+
+
+settings:  # required
+  course_name: sreweek
+
+  gitlab_base_url: https://gitlab.sreweek.ru
+  public_repo: sre/sre-week
+  students_group: sre/submissions
+
+
+ui:
+  task_url_template: https://gitlab.sreweek.ru/sre/sre-week/-/tree/main/$GROUP_NAME/$TASK_NAME
+
+  # optional, any number of links
+  links:
+    "Contribute Manytask": https://github.com/manytask
+
+
+deadlines:
+  timezone: Europe/Moscow
+
+  deadlines: hard
+  schedule:
+    - group: test
+      enabled: true
+      start: 2024-01-01 18:00:00
+      end: 1000d 03:00:00
+      tasks:
+        - task: hello_world
+          score: 10
+          special: 0
+        - task: sum_a_b
+          score: 10
+          special: 0
+          enabled: true
+
+    - group: memory
+      enabled: true
+      start: 2024-05-20 18:00:00
+      steps:
+        0.5: 7d
+      end: 13d 03:00:00
+      tasks:
+        - task: mmul
+          score: 10
